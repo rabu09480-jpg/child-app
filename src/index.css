@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-primary: #39EBFF;
+    --brand-primary-dark: #00bcd4;
+    --brand-primary-text: #082f49; /* Deep navy cyan for WCAG AAA contrast against #39EBFF */
+    --brand-accent: #f59e0b;
+    --brand-bg-soft: #f0fdfa;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Nunito', 'Hind Siliguri', system-ui, -apple-system, sans-serif;
+    color: #0f172a;
+    background-color: #f8fafc;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+  }
+
+  [lang="bn"] {
+    font-family: 'Hind Siliguri', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Primary #39EBFF brand button with guaranteed high-contrast dark text */
+.btn-brand-primary {
+  background-color: #39EBFF;
+  color: #082f49;
+  font-weight: 700;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px -2px rgba(57, 235, 255, 0.45);
+}
+
+.btn-brand-primary:hover {
+  background-color: #5cf0ff;
+  color: #042033;
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 20px -2px rgba(57, 235, 255, 0.65);
+}
+
+.btn-brand-primary:active {
+  transform: translateY(1px);
+}
+
+/* Card hover micro-animations with #39EBFF subtle aura */
+.card-hover {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px -10px rgba(57, 235, 255, 0.22), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
+  border-color: #39EBFF;
+}
+
+/* Smooth button press micro-interaction */
+.btn-interaction {
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-interaction:hover {
+  transform: translateY(-1px);
+}
+
+.btn-interaction:active {
+  transform: translateY(1px);
+}
+
+/* Brand #39EBFF ambient glow effect */
+.glow-brand {
+  box-shadow: 0 0 35px 5px rgba(57, 235, 255, 0.35);
+}
+
+/* Bengali font helper */
+.font-bengali {
+  font-family: 'Hind Siliguri', system-ui, sans-serif;
+}
+

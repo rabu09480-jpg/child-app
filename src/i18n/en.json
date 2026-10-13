@@ -1,0 +1,142 @@
+{
+  "brand": {
+    "name": "Child Voice",
+    "tagline": "Protecting Rights, Empowering Children Across All 64 Districts of Bangladesh",
+    "emergencyDial": "National Emergency Helpline 1098"
+  },
+  "nav": {
+    "home": "Home",
+    "rightsHub": "Child Rights",
+    "childCorner": "Child Corner",
+    "miniApps": "Digital Services",
+    "safeBrowsing": "Safe Browsing",
+    "about": "About Us",
+    "getInvolved": "Get Involved",
+    "reportIncident": "Report Issue",
+    "toggleLang": "বাংলা",
+    "lowBandwidth": "Data Saver Mode",
+    "listenAudio": "Listen Aloud"
+  },
+  "hero": {
+    "badge": "Nationwide Bangladesh Child Welfare Initiative",
+    "title": "Every Child's Voice Matters Across Bangladesh.",
+    "subtitle": "Connecting every district—from urban centers of Dhaka and Chattogram to rural villages, char river islands, and remote borders—with child rights education, safe browsing, anonymous safety reporting, and youth advocacy.",
+    "exploreRightsBtn": "Explore Child Rights",
+    "volunteerBtn": "Become a Volunteer",
+    "listenIntroduction": "Listen to Voice Intro",
+    "callingCard": "Dial 1098 (National Toll-Free 24/7) or 999 for Immediate Rescue"
+  },
+  "stats": {
+    "title": "Nationwide Reach Across Bangladesh",
+    "children": "Children Reached",
+    "workshops": "National Awareness Sessions",
+    "districts": "Districts Covered (All 64)",
+    "casesHandled": "Nationwide Incidents Resolved"
+  },
+  "rights": {
+    "title": "Know Your Inherent Rights",
+    "subtitle": "Based on the United Nations Convention on the Rights of the Child (UNCRC) and Bangladesh Children Act 2013 applicable across the nation.",
+    "readAloud": "Read Aloud",
+    "stopAudio": "Stop Audio",
+    "legalReference": "Legal Protection:",
+    "whatToDo": "What You Can Do:"
+  },
+  "voiceWall": {
+    "title": "Children's Creative Voice Wall of Bangladesh",
+    "subtitle": "A nationwide showcase of drawings, poems, stories, and aspirations submitted by children from all 8 divisions of Bangladesh.",
+    "filterAll": "All Creations",
+    "filterDrawings": "Drawings",
+    "filterStories": "Stories",
+    "filterPoems": "Poems",
+    "submitYourWork": "Share Your Artwork or Story",
+    "childSafeNotice": "Parental & guardian consent verified. Personal identifiers are protected.",
+    "likes": "Appreciations",
+    "drawingPadTitle": "Interactive Child Canvas",
+    "canvasInstruction": "Draw something wonderful here and submit it to our nationwide gallery!"
+  },
+  "quiz": {
+    "badge": "Child Rights Defender Challenge",
+    "title": "How Well Do You Know Your Rights & Safety?",
+    "subtitle": "Earn your official Child Rights Defender e-Certificate by scoring 80% or above!",
+    "question": "Question",
+    "of": "of",
+    "points": "Score",
+    "nextQuestion": "Next Question",
+    "finishQuiz": "Check My Certificate",
+    "tryAgain": "Play Again",
+    "mascotName": "Shobuj the Friendly River Dolphin",
+    "certificateTitle": "Certificate of Child Rights Defender",
+    "awardedTo": "Proudly Awarded To",
+    "downloadCert": "Download Certificate (PNG / Print)",
+    "congrats": "Magnificent job! You are now an official Child Rights Scout in Bangladesh.",
+    "keepLearning": "Great effort! Review the Child Rights Hub and try once more."
+  },
+  "report": {
+    "badge": "100% Anonymous & Secure Nationwide",
+    "title": "Confidential Child Safety & Violation Report",
+    "subtitle": "Zero login required. Help us protect children across Bangladesh from early marriage, dangerous child labor, abuse, or violence.",
+    "incidentTypeLabel": "Type of Situation",
+    "urgencyLabel": "Urgency Level",
+    "locationLabel": "Location (Any District & Upazila in Bangladesh)",
+    "descriptionLabel": "What is happening? (Provide details without exposing child names)",
+    "photoUploadLabel": "Optional Evidence Photo",
+    "metadataStripNotice": "Automatic EXIF metadata stripping: Device ID, GPS coordinates, and camera timestamps are wiped instantly.",
+    "blurPrivacyNotice": "Child Privacy Blur: Faces and identifying emblems will be safely pixelated before review.",
+    "submitBtn": "Submit Confidential Report",
+    "successTitle": "Report Received Safely",
+    "trackingCodeLabel": "Your Anonymous Tracking Code:",
+    "keepSafeNote": "Save this code to check verification status later. No personal details have been recorded.",
+    "trackStatusBtn": "Track Report Status"
+  },
+  "comics": {
+    "title": "Illustrated Safety Comics & Storybook",
+    "subtitle": "Interactive flipbook reader teaching essential safety rules, good touch & bad touch, school rights, and resilience.",
+    "page": "Page",
+    "prevPage": "Previous Page",
+    "nextPage": "Next Page",
+    "listenNarration": "Listen to Page Story",
+    "coreLesson": "Golden Safety Rule:"
+  },
+  "safeBrowsing": {
+    "title": "Kid-Safe Browsing & Web Filter",
+    "subtitle": "Protected online portal curated for students across Bangladesh, safeguarding against adult content and cyber threats.",
+    "searchPlaceholder": "Search safe educational topics (e.g., Mathematics, Science, History of Bangladesh)...",
+    "whitelistedSitesTitle": "Trusted & Verified Learning Portals",
+    "filterSimulatorTitle": "Live Safe-Search & Content Filter Tester",
+    "testerInputPlaceholder": "Enter a phrase or website link to test safety status...",
+    "testBtn": "Analyze Safety",
+    "safetyGuideTitle": "Kids & Parents Digital Safety Guide",
+    "rule1": "Never share your full name, school uniform photos, or phone numbers online.",
+    "rule2": "Tell a trusted elder immediately if someone online makes you feel uncomfortable.",
+    "rule3": "Only visit verified educational websites approved by your teachers and parents."
+  },
+  "about": {
+    "title": "Standing for Every Child Across Bangladesh",
+    "story": "Children throughout Bangladesh—from bustling city neighborhoods to rural village schools, haor wetlands, hill tracts, and river islands—face challenges including school dropouts, hazardous labor, and online risks. Child Voice unites nationwide grassroots youth defense with digital safeguarding tools.",
+    "districtsTitle": "Our National Field Hubs Across 8 Divisions",
+    "mission": "Our 3 Pillars",
+    "pillar1": "Zero Child Labor & Compulsory Schooling",
+    "pillar2": "Child-Friendly Digital Literacy & Safe Tech",
+    "pillar3": "24/7 Community First-Response with 1098 Integration"
+  },
+  "volunteer": {
+    "title": "Join as a Youth Volunteer in Bangladesh",
+    "subtitle": "Help children in your local district, upazila, or union know their rights and stay safe.",
+    "formTitle": "Volunteer Application",
+    "name": "Full Name",
+    "phone": "Phone Number",
+    "district": "Select District (All 64 Covered)",
+    "profession": "Occupation",
+    "skills": "Select Your Strengths",
+    "submit": "Register as Volunteer",
+    "donorTitle": "Sponsor a Child Protection Kit",
+    "kit1": "School Learning & Rights Kit ($15 / ৳1,500)",
+    "kit2": "Digital Learning & Safety Tablet ($45 / ৳5,500)",
+    "kit3": "Emergency Community Protection Kit ($25 / ৳3,000)"
+  },
+  "footer": {
+    "rights": "All Rights Reserved. Child Voice (চাইল্ড ভয়েস). Nationwide non-commercial child protection initiative in Bangladesh.",
+    "compliance": "Compliant with UNCRC, Bangladesh Children Act 2013, and International COPPA Guidelines.",
+    "emergencyNotice": "In case of imminent danger to a child anywhere in Bangladesh, immediately call 1098 (Child Helpline) or 999 (National Emergency)."
+  }
+}

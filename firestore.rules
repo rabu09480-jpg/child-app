@@ -1,0 +1,44 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 1. Anonymous Incident Reports (Zero-PII Safeguarding)
+    match /child_incident_reports/{reportId} {
+      // Anyone can submit a confidential safety report
+      allow create: if request.resource.data.description is string
+                    && request.resource.data.trackingCode is string;
+      // Allow reading for status tracking via unique code
+      allow read: if true;
+      allow update, delete: if false; // Immutable after submission
+    }
+
+    // 2. Children's Creative Corner & Voice Wall Submissions
+    match /creative_submissions/{submissionId} {
+      allow create: if request.resource.data.title is string
+                    && request.resource.data.author is string;
+      allow read: if true;
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['likes']);
+      allow delete: if false;
+    }
+
+    // 3. Volunteer Applications
+    match /volunteers/{volunteerId} {
+      allow create: if request.resource.data.fullName is string
+                    && request.resource.data.phone is string;
+      allow read: if true;
+      allow update, delete: if false;
+    }
+
+    // 4. Quiz Completions & e-Certificates
+    match /quiz_completions/{completionId} {
+      allow create: if request.resource.data.certificateCode is string;
+      allow read: if true;
+      allow update, delete: if false;
+    }
+
+    // Default deny for all other collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

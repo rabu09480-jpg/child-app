@@ -1,0 +1,6 @@
+{
+  "name": "Child Voice (চাইল্ড ভয়েস)",
+  "description": "Nationwide child-friendly rights hub, anonymous reporting, safe browsing, digital comics, and community advocacy for children across all 64 districts of Bangladesh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

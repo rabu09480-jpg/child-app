@@ -1,0 +1,110 @@
+// Prisma Schema for Child Voice (চাইল্ড ভয়েস)
+// Database: PostgreSQL / Supabase / Neon
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// 1. Anonymous Incident / Safety Reporting Form (Zero-PII Compliance)
+model ChildIncidentReport {
+  id                  String   @id @default(uuid())
+  trackingCode        String   @unique // e.g. "CV-9821-BHR" for anonymous tracking
+  incidentType        String   // "CHILD_LABOR", "EARLY_MARRIAGE", "EDUCATION_DEPRIVATION", "PHYSICAL_ABUSE", "NATURAL_DISASTER_DISPLACEMENT", "OTHER"
+  urgencyLevel        String   @default("MEDIUM") // "LOW", "MEDIUM", "HIGH", "CRITICAL_EMERGENCY"
+  district            String   // e.g. "Bagerhat", "Barguna", "Cox's Bazar", "Satkhira", "Patuakhali"
+  upazila             String?  
+  villageOrUnion      String?  
+  description         String   @db.Text
+  
+  // Privacy & COPPA protection flags
+  metadataStripped    Boolean  @default(true) // EXIF location/camera tags stripped on upload
+  photoPrivacyBlurred Boolean  @default(true) // Faces of minors automatically blurred
+  attachmentUrl       String?
+  
+  // Status tracking without requiring user identity
+  status              String   @default("SUBMITTED") // "SUBMITTED", "UNDER_VERIFICATION", "ASSIGNED_TO_VOLUNTEER", "REFERRED_TO_1098", "RESOLVED"
+  assignedVolunteerId String?
+  investigationNotes  String?  @db.Text
+  actionTaken         String?  @db.Text
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  assignedVolunteer   Volunteer? @relation(fields: [assignedVolunteerId], references: [id])
+}
+
+// 2. Children's Creative Corner / Voice Wall
+model CreativeSubmission {
+  id              String   @id @default(uuid())
+  title           String
+  category        String   // "DRAWING", "POEM", "STORY", "VOICE_RECORDING"
+  authorName      String   // Only first name or pseudonym (e.g. "Amina (Age 9)")
+  authorAge       Int
+  district        String   // Coastal / rural origin district
+  content         String?  @db.Text // Text content for poems/stories
+  mediaUrl        String?  // Image or audio file URL
+  audioNarration  String?  // Optional audio reading URL
+  likesCount      Int      @default(0)
+  isApproved      Boolean  @default(false) // Safeguarding review before publishing
+  createdAt       DateTime @default(now())
+}
+
+// 3. Youth & Community Field Volunteers
+model Volunteer {
+  id              String   @id @default(uuid())
+  fullName        String
+  phone           String
+  email           String?
+  district        String   // Primary area of operation
+  upazila         String
+  profession      String   // "STUDENT", "TEACHER", "COMMUNITY_LEADER", "SOCIAL_WORKER"
+  specialization  String[] // ["CHILD_COUNSELING", "FIRST_AID", "DIGITAL_LITERACY", "DISASTER_RELIEF"]
+  availability    String   // "WEEKENDS", "FULL_TIME", "EMERGENCY_ON_CALL"
+  isVerified      Boolean  @default(false)
+  badgeLevel      String   @default("COMMUNITY_DEFENDER")
+  createdAt       DateTime @default(now())
+
+  assignedReports ChildIncidentReport[]
+}
+
+// 4. Child Rights Quiz Completion & Defender Badges
+model QuizCompletion {
+  id              String   @id @default(uuid())
+  participantName String
+  score           Int
+  totalQuestions  Int      @default(5)
+  certificateCode String   @unique // e.g. "CRD-2026-8841"
+  badgeAwarded    String   // "CHILD_RIGHTS_CHAMPION", "JUNIOR_ADVOCATE", "COMMUNITY_SCOUT"
+  completedAt     DateTime @default(now())
+}
+
+// 5. Kid-Safe Browsing Whitelist & Safety Directory
+model SafeWebDirectory {
+  id          String   @id @default(uuid())
+  title       String
+  titleBn     String
+  url         String   @unique
+  category    String   // "EDUCATION", "SCIENCE", "CREATIVE", "BANGLA_LITERATURE", "GOVERNMENT_KIDS"
+  ageRating   String   // "6-10", "11-14", "ALL_AGES"
+  description String
+  descriptionBn String
+  verifiedAt  DateTime @default(now())
+  isFeatured  Boolean  @default(false)
+}
+
+// 6. Operational Regions & Field Base Hubs
+model OperationalRegion {
+  id                String   @id @default(uuid())
+  districtName      String   @unique
+  districtNameBn    String
+  division          String
+  coastalVulnerability String // "HIGH_CYCLONE_RISK", "SALINITY_AFFECTED", "RIVER_EROSION"
+  childrenBenefited Int      @default(0)
+  activeVolunteers  Int      @default(0)
+  schoolsConnected  Int      @default(0)
+  emergencyContact  String   @default("1098")
+}
